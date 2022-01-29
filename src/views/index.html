@@ -1,66 +1,24 @@
-<!--
-      used https://markdowntohtml.com/ on REQUIREMENTS.md
-    -->
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <title>Store API</title>
+  <title>todo API</title>
 </head>
 
 <body>
   <h2 id="api-endpoints">API Endpoints</h2>
-  <h4 id="authentication">Authentication</h4>
+  <h4 id="todos">Todos</h4>
   <ul>
-    <li>Authenticate (/authenticate) POST
-      parameters: {user_name,password}</li>
-  </ul>
-  <h4 id="users">Users</h4>
-  <ul>
-    <li>Create (/users) POST [token required]
-      parameters: {user_name,first_name, last_name, password}</li>
-    <li>Current Order by user(/users/:id/orders) GET [token required]</li>
-  </ul>
-  <h4 id="products">Products</h4>
-  <ul>
-    <li>Index (/products) GET </li>
-    <li>Show (/products/:id) GET </li>
-    <li>Create (/products) POST [token required]
-      parameters:{name, price} </li>
-  </ul>
-  <h4 id="orders">Orders</h4>
-  <ul>
-    <li>Create (/orders) POST [token required]</li>
-    <li>Set status (/orders/:id) PATCH [token required]</li>
-    <li>Add product (/orders/:id) POST [token required]</li>
-  </ul>
-  <h2 id="data-shapes">Data Shapes</h2>
-  <h4 id="product">Product</h4>
-  <ul>
-    <li>id</li>
-    <li>name</li>
-    <li>price<h4 id="user">User</h4>
+    <li>Create (/todos) POST
+      parameters: {title}</li>
+    <li>index(/todos/) GET
+      queries: sort=asc/dec , limit(integer) , completed=true/false
     </li>
-    <li>id</li>
-    <li>user_name</li>
-    <li>first_name</li>
-    <li>last_name</li>
-    <li>password</li>
+    <li>Show(/todos/:id) GET</li>
+    <li>Create (/todos) POST
+      parameters:at least one of {title,completed}</li>
+    <li>Delete(/todos/:id) DELETE</li>
   </ul>
-  <h4 id="orders">Orders</h4>
-  <ul>
-    <li>id</li>
-    <li>user_id</li>
-    <li>status of order (active or complete)</li>
-  </ul>
-  <h4 id="order-products">Order products</h4>
-  <ul>
-    <li>id</li>
-    <li>product_id</li>
-    <li>order_id</li>
-    <li>quantity of each product in the order</li>
-  </ul>
-
 </body>
 
 </html>

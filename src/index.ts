@@ -15,7 +15,7 @@ app.use('/todos', routes);
 //app.Method takes two parameters, URI and callback function
 //callback function takes request and response objects as parameters
 app.get('/', async (req: Request, res: Response): Promise<void> => {
-    res.send("root route")
+    res.sendFile(__dirname + '/views/index.html');
 }
 );
 
