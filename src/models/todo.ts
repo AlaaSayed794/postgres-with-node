@@ -70,7 +70,6 @@ export class TodoStore {
       const conn = await Client.connect()
 
       const result = await conn.query(sql, [id])
-      console.log(result)
       const numberOfDeletedRows = result.rowCount
 
       conn.release()

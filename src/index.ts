@@ -1,6 +1,7 @@
 import express, { Request, Response, Application } from 'express';
 import logger from './middlewares/logger';
-import routes from './routes';
+import todosRoutes from './routes/todos';
+import userRoutes from './routes/users';
 
 const app: Application = express();
 const port: number = 3000;
@@ -9,7 +10,8 @@ const port: number = 3000;
 app.use([logger])
 
 //app.use routes takes url and routes object. now to access routes root url you need to access /api
-app.use('/todos', routes);
+app.use('/todos', todosRoutes);
+app.use('/users', userRoutes);
 
 
 //app.Method takes two parameters, URI and callback function
